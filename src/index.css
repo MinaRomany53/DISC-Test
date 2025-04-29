@@ -265,6 +265,29 @@ progress {
 }
 
 
+.app-footer {
+  margin-top: 3rem;
+  padding: 2rem;
+  text-align: center;
+  font-size: 1.4rem;
+  color: var(--color-medium);
+  border-top: 1px solid var(--color-dark);
+  width: 100%;
+}
+.styled-link {
+  color: var(--color-green);
+  text-decoration: underline;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.styled-link:hover {
+  text-decoration: none;
+}
+.app-footer p {
+  margin: 0;
+}
+
 /* ===== Responsive Layout Adjustments ===== */
 
 @media (max-width: 1024px) {

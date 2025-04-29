@@ -86,10 +86,22 @@ export default function App() {
         )}
         {state.status === "result" && <ResultScreen leastSymbols={state.leastSymbols} mostSymbols={state.mostSymbols} dispatch={dispatch} />}
       </MainScreen>
+      <Footer />
     </div>
   );
 }
 
 function MainScreen({ children }) {
   return <div className="main">{children}</div>;
+}
+
+
+function Footer() {
+  return (
+    <footer className="app-footer">
+      <p>
+        Made with 💻 by <a href="https://minaromany7.netlify.app/" target="_blank" rel="noopener noreferrer" className="styled-link ">Mina</a>
+      </p>
+    </footer>
+  );
 }
