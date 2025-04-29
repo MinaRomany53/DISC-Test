@@ -18,9 +18,11 @@ export default function Quiz({ questions, curr, dispatch }) {
   };
 
   const handleMost = (i) => {
+    if (i === least) setLeast(""); // clear least if same
     setMost(i);
   };
   const handleLeast = (i) => {
+    if (i === most) setMost(""); // clear most if same
     setLeast(i);
   };
   return (
