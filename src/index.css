@@ -191,6 +191,14 @@ progress {
   border: 2px solid var(--color-green);
   color: var(--color-light);
 }
+.btn.choosen:focus {
+  outline: none;
+  background-color: var(--color-green);
+  border: 2px solid var(--color-green);
+  color: var(--color-light);
+}
+
+
 
 .result-screen {
   display: flex;
