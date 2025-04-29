@@ -36,13 +36,13 @@ export default function Quiz({ questions, curr, dispatch }) {
             <div className="options-body" key={i}>
               <button className="btn-header">{option.text}</button>
               <button
-                className={`btn ${i === most ? "btn-green" : ""}`}
+                className={`btn ${i === most ? "choosen" : ""}`}
                 onClick={() => handleMost(i)}
               >
                 {option.most}
               </button>
               <button
-                className={`btn ${i === least ? "btn-green" : ""}`}
+                className={`btn ${i === least ? "choosen" : ""}`}
                 onClick={() => handleLeast(i)}
               >
                 {option.least}
