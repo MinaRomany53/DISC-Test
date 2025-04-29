@@ -9,7 +9,7 @@ export default function WelcomeScreen({ totalQuestions, dispatch }) {
       <h2>Welcome to DISC Test !</h2>
       <h3>
         <strong>{totalQuestions}</strong> questions to test your personality
-        style 💡
+        style.
       </h3>
       <button className="btn" onClick={handleStart}>
         Let&apos;s Start !
