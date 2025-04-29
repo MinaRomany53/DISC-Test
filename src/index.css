@@ -115,6 +115,7 @@ progress {
 }
 
 .btn {
+  outline: none;
   display: block;
   font-family: inherit;
   color: inherit;
@@ -125,6 +126,9 @@ progress {
   cursor: pointer;
   border-radius: 100px;
   transition: 0.3s;
+}
+.btn:focus{
+  outline: none;
 }
 
 .btn:not([disabled]):hover {
@@ -187,6 +191,7 @@ progress {
 }
 
 .btn.choosen {
+  outline: none;
   background-color: var(--color-green);
   border: 2px solid var(--color-green);
   color: var(--color-light);
