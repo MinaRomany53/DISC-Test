@@ -1,67 +1,17 @@
 /* eslint-disable react/prop-types */
 import { useReducer } from "react";
-// Data
-import questionsData from "./Data/questions";
+import {reducer, initialState } from "./Reducer";
+
 // Components
 import Header from "./Components/Header";
+import MainScreen from "./Components/MainScreen";
 import WelcomeScreen from "./Components/WelcomeScreen";
 import ProgressBar from "./Components/ProgressBar";
 import Quiz from "./Components/Quiz";
 import ResultScreen from "./Components/ResultScreen";
+import Footer from "./Components/Footer";
 
-const initialState = {
-  questions: questionsData,
-  status: "ready",
-  curr: 1,
-  mostSymbols: {
-    "Σ": 0,
-    "Δ": 0,
-    "I": 0,
-    "X": 0,
-    "-": 0,
-  },
-  leastSymbols: {
-    "Σ": 0,
-    "Δ": 0,
-    "I": 0,
-    "X": 0,
-    "-": 0,
-  },
-};
 
-const reducer = (state, action) => {
-  switch (action.type) {
-    case "StartGame":
-      return { ...state, status: "active", curr: 1 };
-      case "Answer": {
-        const answer = action.payload;
-        return {
-          ...state,
-          mostSymbols: {
-            ...state.mostSymbols,
-            [answer[0]]: state.mostSymbols[answer[0]] + 1,
-          },
-          leastSymbols: {
-            ...state.leastSymbols,
-            [answer[1]]: state.leastSymbols[answer[1]] + 1,
-          },
-        };
-      }
-    case "NextQuestion":
-      if (state.curr < state.questions.length) {
-        return {
-          ...state,
-          curr: state.curr + 1,
-        };
-      } else {
-        return { ...state, status: "result", curr: 1 };
-      }
-    case "Result":
-      return { ...state, status: "result", curr: 1 };
-    case "Reset":
-      return { ...initialState };
-  }
-};
 
 export default function App() {
   const [state, dispatch] = useReducer(reducer, initialState);
@@ -88,20 +38,5 @@ export default function App() {
       </MainScreen>
       <Footer />
     </div>
-  );
-}
-
-function MainScreen({ children }) {
-  return <div className="main">{children}</div>;
-}
-
-
-function Footer() {
-  return (
-    <footer className="app-footer">
-      <p>
-        Made with 💻 by <a href="https://minaromany7.netlify.app/" target="_blank" rel="noopener noreferrer" className="styled-link ">Mina</a>
-      </p>
-    </footer>
   );
 }
